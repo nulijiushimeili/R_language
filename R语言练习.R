@@ -48,12 +48,98 @@ s2 <- seq(1,100,length=10)
 # 生成26个字母
 e = letters[seq(1,26)]
 
+# which()函数的调用
+a <- c(3,4,5,6,6,3,7,8)
+which.max(a)
+which.min(a)
+which(a == 6)
+which(a < 4)
 
+# 矩阵
+a <- 1:16
+# 默认 先 生成的是列向量
+A <- matrix(a,nrow = 4,ncol = 4)
+A
+# byrow=T 先生成行向量
+B <- matrix(a,nrow = 4,ncol = 4, byrow=T)
+# 矩阵的转置
+t(A)
+# 返回矩阵的对角线
+c = diag(B)
+c
+# 矩阵求逆(求解线性方程组)
+D = matrix(c(2,4,4,2),2,2)
+D
+solve(D)
 
+# 矩阵的行列式
+det(D)
 
+# 矩阵的特征值
+a = diag(4) + 1
+a
+b = eigen(a,symmetric = T)
+b
 
+# 判读数据是否为某个类型
+is.vector(D)
+is.array(D)
 
+# 根据向量创建数组
+x <- 1:6
+dim(x) <- c(2,3)
+x
+is.matrix(x)
+is.array(x)
+# 矩阵是数组的特殊情况
+# 矩阵的每个元素必须是同一种元素
 
+# -----------------------------------------------
+c = 1:16
+c
+# range() 生成向量
+r = range(1,16)
+r
+r <- range(1:16)
+mode(r)
+r
+is.array(r)
+is.vector(r)
+
+# 方差
+var(c)
+
+# 标准差
+sd(c)
+
+# 翻转
+rev(c)
+
+# 倒排序
+rev(sort(c))
+
+# prod()将向量中的每个值连乘求积
+prod(c)
+
+# -----------------------------
+# 字符串处理
+s1 = "hello word"
+s2 = "hello R"
+# 使用分隔符切分字符串
+strsplit(s1, " ")
+# 使用分割符拼接多个字符串,默认是使用空格
+paste(s1,s2,sep = "--")
+# 无缝拼接字符串
+paste0(s1,s2)
+
+# 返回字符串字符的个数
+nchar(s1)
+
+# substr(s,start,stop) 字符串截取函数
+substr(s1,3,6)
+
+# substring(s,start) 可以不设置stop
+substring(s1,2)
 
 
 
