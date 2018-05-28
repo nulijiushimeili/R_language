@@ -141,6 +141,74 @@ substr(s1,3,6)
 # substring(s,start) 可以不设置stop
 substring(s1,2)
 
+# 创建一个向量
+x <- c(1:6)
+x
+is.vector(x)
+is.array(x)
+# 将向量转换成矩阵
+# 矩阵是特殊的数组
+dim(x)<-c(2,3)
+is.array(x)
+is.matrix(x)
+is.vector(x)
+
+# R 数据类型转换
+
+# 转换成字符串类型
+as.character(360)
+
+# 转换成数值类型
+as.numeric("3.1415")
+
+# 转换成Boolean类型
+as.logical(0)
+
+# 编译
+as.complex(1)
+
+# 转换数值类型失败会丢失数据,返回NA
+as.numeric("abc")
+
+
+# 读取剪贴板的信息,得到DataFrame
+# 赋值数据到剪贴板,运行代码即可
+# y = read.table("clipboard", header = F)
+# y
+
+# 读取文本文件中的数据,得到DataFrame
+# 读取的数据全部都是字符串类型
+x = read.table("D:\\tmp\\emp.txt")
+x
+
+# 在列的方向上求最大值
+apply(x,2,max)
+
+# 求数据框指定列的平均值
+apply(x[c(1,6,7)],2,mean)
+
+# for循环的使用
+for(i in 1:10){
+  a[i] = i * 10
+}
+a
+
+# while循环的使用
+a = 5
+while(a == 5){
+  a = a + 12
+}
+a
+
+# 随机产生100个80-100的数的向量
+x = round(runif(100, min = 80, max = 100))
+
+# 随机产生100个正态分布的数的向量
+# 限制均值是80,标准差是7
+y = round(rnorm(100,mean = 80,sd = 7))
+
+
+
 
 
 
